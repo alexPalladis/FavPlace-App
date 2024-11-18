@@ -1,71 +1,110 @@
-# FavPlace App
+# FavPlaces 🌍
 
-FavPlace App is a full-stack application built using **React**, **Node.js**, **Express**, and **MongoDB**. This app allows users to create accounts, upload images of their favorite places, and display these locations on an interactive Google Map.
-
----
-
-## Features
-
-- **User Authentication**: Secure sign-up and log-in functionality.
-- **Image Uploads**: Upload images of favorite places and display them.
-- **Google Maps Integration**: View locations on an interactive map with markers.
-- **Responsive Design**: Fully responsive UI for a seamless experience across devices.
-- **RESTful API**: Built with Express and MongoDB to handle all backend operations.
+FavPlaces is a full-stack web application where users can create an account, upload images of their favorite places around the world, and view them on an interactive Google Maps interface. The app is built using **React** for the frontend, **Node.js** and **Express** for the backend, and **MongoDB** with **Mongoose** for the database.
 
 ---
 
-## Technologies Used
+## Features ✨
 
-### Frontend
-- **React.js**: For building the user interface.
-- **React Router**: For managing navigation.
-- **Google Maps API**: For rendering maps and markers.
-- **CSS/SCSS**: For styling.
-
-### Backend
-- **Node.js**: Runtime environment for the server.
-- **Express.js**: Framework for creating the API.
-- **MongoDB**: Database to store user data and places.
-- **Mongoose**: MongoDB object modeling.
-
-### Authentication
-- **JWT (JSON Web Tokens)**: For secure authentication.
-- **BCrypt**: For hashing passwords.
+- **User Authentication**: Register and log in securely to your account.
+- **Image Upload**: Upload pictures of your favorite places.
+- **Google Maps Integration**: View your favorite places on an interactive map.
+- **Responsive Design**: Optimized for both desktop and mobile devices.
+- **CRUD Functionality**: Edit and delete your places with ease.
 
 ---
 
-## Project Setup
+## Tech Stack 🛠️
 
-### Prerequisites
+- **Frontend**: React, Axios
+- **Backend**: Node.js, Express.js
+- **Database**: MongoDB, Mongoose
+- **Maps API**: Google Maps API
+- **Other Tools**: Multer (file upload), JSON Web Tokens (JWT), bcrypt (password hashing)
 
-- [Node.js](https://nodejs.org/) (v14+)
-- [MongoDB](https://www.mongodb.com/) (local or cloud instance, e.g., MongoDB Atlas)
-- [Google Maps API Key](https://developers.google.com/maps/documentation/javascript/get-api-key)
+---
 
-### Installation
+## Prerequisites 🖥️
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/alexPalladis/FavPlace-App.git
-   cd FavPlace-App
+Make sure you have the following installed on your machine:
 
-### Install dependencies for both frontend and backend:
+- Node.js (v14+)
+- MongoDB (local or cloud-based, e.g., MongoDB Atlas)
+- NPM or Yarn
 
+---
+
+## Getting Started 🚀
+
+### 1. Clone the Repository
 ```bash
-# Install backend dependencies
-cd backend
-npm install
+git clone https://github.com/alexPalladis/FavPlaces.git
+cd FavPlaces
+```
 
-# Install frontend dependencies
-cd frontend
-npm install
+### 2. Setup Environment Variables
+Create `.env` files in both the `frontend` and `backend` directories. Follow the examples below:
 
-###Set up Environment Variables:
-```bash
+#### Frontend `.env`
+```env
+REACT_APP_API_URL=http://localhost:5000/api
+REACT_APP_GOOGLE_MAPS_API_KEY=your_google_maps_api_key
+```
 
-Create a `.env` file in both the `frontend` and `backend` directories.
-
-
+#### Backend `.env`
+```env
 PORT=5000
 MONGO_URI=mongodb+srv://<username>:<password>@cluster.mongodb.net/myDatabase?retryWrites=true&w=majority
 JWT_SECRET=your_jwt_secret
+```
+
+### 3. Start the application
+
+#### Start backend server
+```env
+cd backend
+npm start
+```
+
+#### Start frontend server
+```env
+cd frontend
+npm start
+```
+
+## How It Works
+
+-**Sign Up: Users can create an account with their email and password.**
+
+-**Log In: Users can log in to their account to access features.**
+
+-**Add a Place: Users can add their favorite places by:**
+
+   1)Providing a location name and description.
+
+   2)Uploading an image.
+
+   3)View on Google Maps: All uploaded places are displayed on a Google Map with markers.
+
+## API Endpoints
+
+#### Authentication:
+
+-**GET /api/users:** See all the users(Home Page).
+
+-**POST /api/users/signup:** Create a new user account.
+
+-**POST /api/users/login:** Log in with existing credentials.
+
+#### Places:
+
+-**GET /api/places:** Get all places.
+
+-**POST /api/places:** Add a new place (authenticated).
+
+-**PATCH /api/places/:pid:** Update details of a specific place.
+
+-**DELETE /api/places/:pid:** Delete a place (authenticated).
+
+
+
